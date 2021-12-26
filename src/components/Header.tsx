@@ -19,7 +19,7 @@ export const Header = () => {
       </span>
       <div
         className={cn('absolute right-0 p-5 shadow-md rounded-md', {
-          hidden: isShowCard,
+          hidden: !isShowCard,
         })}
       >
         {basket.map((bask) => (
@@ -30,7 +30,7 @@ export const Header = () => {
               <div className='text-2xl'>
                 {bask.count} * {bask.price}$
               </div>
-              <div className='absolute right-0  text-red-600' >&times;</div>
+              <div className='absolute right-0  text-red-600'>&times;</div>
             </div>
           </div>
         ))}

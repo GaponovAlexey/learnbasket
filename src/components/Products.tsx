@@ -5,7 +5,7 @@ import { ProductItem } from './ProductItem'
 export const Products = () => {
   const { products } = useAppSelector((state) => state.count)
   return (
-    <div>
+    <div className='m-6' >
       {products.map((prod) => (
         <ProductItem key={prod.name} {...prod} />
       ))}

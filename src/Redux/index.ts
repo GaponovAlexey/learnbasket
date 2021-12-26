@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type TProd = {
   id: number
@@ -10,7 +10,7 @@ type TBasket = {
   id: number
   imagePath: string
   name: string
-  count: number
+  count?: number
   price: number
 }
 
@@ -56,10 +56,19 @@ const initialState: CounterState = {
 export const counterSlice = createSlice({
   name: 'counter',
   initialState,
-  reducers: {},
+  reducers: {
+    addReducer: (state, { payload }: PayloadAction<TBasket>) => {
+      state.basket.push({
+        id: payload.id,
+        imagePath: payload.imagePath,
+        name: payload.name,
+        price: payload.price,
+      })
+    },
+  },
 })
 
 // Action creators are generated for each case reducer function
-export const {} = counterSlice.actions
+export const { addReducer } = counterSlice.actions
 
 export default counterSlice.reducer
