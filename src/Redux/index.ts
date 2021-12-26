@@ -58,11 +58,13 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     addReducer: (state, { payload }: PayloadAction<TBasket>) => {
+      const RealIndex = state.basket.find((el) => el.id === payload.id)
       state.basket.push({
         id: payload.id,
         imagePath: payload.imagePath,
         name: payload.name,
         price: payload.price,
+        count: state.count + 1,
       })
     },
   },
