@@ -13,25 +13,32 @@ export const userSlies = createSlice({
   name: 'user',
   initialState,
   reducers: {},
-  extraReducers: {
-    [fetchUsers.fulfilled.type]: (
-      state,
-      { payload }: PayloadAction<user[]>
-    ) => {
-      state.IsLoading = false
-      state.error = ''
-      state.user = payload
-    },
-    [fetchUsers.pending.type]: (state) => {
-      state.IsLoading = true
-    },
-    [fetchUsers.rejected.type]: (state, { payload }: PayloadAction<string>) => {
-      state.IsLoading = false
-      state.error = payload
-    },
+  extraReducers: (builder) => {
+    builder
+    .addCase(fetchUsers.fulfilled, (state, { payload }) => {
+      state.user.push(payload)
+    })
+    .addCase(fetchUsers.rejected, (state, action) => {
+      state.error = action.payload
+    })
   },
 })
 
 // export const {} = userSlies.actions
 
 export default userSlies.reducer
+// [fetchUsers.fulfilled.type]: (
+//   state,
+//   { payload }: PayloadAction<user[]>
+// ) => {
+//   state.IsLoading = false
+//   state.error = ''
+//   state.user = payload
+// },
+// [fetchUsers.pending.type]: (state) => {
+//   state.IsLoading = true
+// },
+// [fetchUsers.rejected.type]: (state, { payload }: PayloadAction<string>) => {
+//   state.IsLoading = false
+//   state.error = payload
+// },

@@ -1,3 +1,5 @@
+import { SerializedError } from "@reduxjs/toolkit";
+
 export interface user {
   id: number
   name: string
@@ -6,6 +8,6 @@ export interface user {
 
 export interface CounterState {
   IsLoading: boolean
-  error: string
+  error: SerializedError | any
   user: user[]
 }
