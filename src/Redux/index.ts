@@ -18,6 +18,7 @@ export interface CounterState {
   count: number
   products: Array<TProd>
   basket: Array<TBasket>
+ 
 }
 
 const initialState: CounterState = {
@@ -51,6 +52,7 @@ const initialState: CounterState = {
       price: 5520,
     },
   ],
+
 }
 
 export const counterSlice = createSlice({
@@ -58,14 +60,20 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     addReducer: (state, { payload }: PayloadAction<TBasket>) => {
-      const RealIndex = state.basket.find((el) => el.id === payload.id)
-      state.basket.push({
-        id: payload.id,
-        imagePath: payload.imagePath,
-        name: payload.name,
-        price: payload.price,
-        count: state.count + 1,
-      })
+      const { id, imagePath, name, price } = payload
+      const oneId = state.basket.find((el) => el.id === id)
+      // eslint-disable-next-line no-lone-blocks
+      {
+        oneId
+          ? state.basket.push({
+              id,
+              imagePath,
+              name,
+              price,
+              count: state.count + 1,
+            })
+          : console.log(oneId)
+      }
     },
   },
 })
