@@ -22,6 +22,7 @@ export interface IPost {
 //   }),
 // })
 
+
 export const PostsServise = createApi({
   reducerPath: 'mypath',
   baseQuery: fetchBaseQuery({ baseUrl: userAPI }),
