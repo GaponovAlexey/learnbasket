@@ -8,6 +8,7 @@ export const Products = () => {
     <div className='m-6' >
       {products.map((prod) => (
         <ProductItem key={prod.name} {...prod} />
+        
       ))}
     </div>
   )
