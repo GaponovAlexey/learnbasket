@@ -1,11 +1,15 @@
 import React from 'react'
+import { useAppSelector } from '../hooks/hooks'
 import { PostsServise } from '../servise/userServise'
+import { Postcont } from './Postcont'
 
 export const PostConteiners = () => {
-  const {data: posts } = PostsServise.useFetchAllPostsQuery(5)
+  const { user } = useAppSelector((state) => state.user)
   return (
-    <div>
-     {posts?.map(el => el.body)}
+    <div className='element'>
+      {user.map((el) => (
+        <Postcont key={el.id} {...el} />
+      ))}
     </div>
   )
 }

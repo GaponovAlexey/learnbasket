@@ -13,7 +13,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 //   }
 // }
 
-const userAPI = 'https://jsonplaceholder.typicode.com/users'
+const userAPI = 'https://jsonplaceholder.typicode.com/photos'
 
 export const fetchUsers = createAsyncThunk(
   'users/fetchByIdStatus',

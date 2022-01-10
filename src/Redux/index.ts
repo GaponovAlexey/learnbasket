@@ -6,7 +6,7 @@ type TProd = {
   imagePath: string
   price: number
 }
-type TBasket = {
+export type TBasket = {
   id: number
   imagePath: string
   name: string

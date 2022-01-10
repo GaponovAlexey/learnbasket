@@ -1,12 +1,14 @@
 import React from 'react'
 import { Header } from './components/Header'
-import { Main } from './pages/Main'
+import { Products } from './components/Products'
+import { PostConteiners } from './pages/PostConteiners'
 
 function App() {
   return (
     <div>
       <Header />
-      <Main />
+      <PostConteiners />
+      {/* <Products/> */}
     </div>
   )
 }

@@ -7,22 +7,6 @@ export interface IPost {
   body: string
 }
 
-// export const PostsServise = createApi({
-//   reducerPath: 'PostsServise',
-//   baseQuery: fetchBaseQuery({ baseUrl: userAPI }),
-//   endpoints: (builder) => ({
-//     fetchAllPosts: builder.query<IPost[], number>({
-//       query: (limit: 5) => ({
-//         url: `/posts`,
-//         params: {
-//           _limit: limit
-//         }
-//       }),
-//     }),
-//   }),
-// })
-
-
 export const PostsServise = createApi({
   reducerPath: 'mypath',
   baseQuery: fetchBaseQuery({ baseUrl: userAPI }),

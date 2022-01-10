@@ -24,21 +24,5 @@ export const userSlies = createSlice({
   },
 })
 
-// export const {} = userSlies.actions
 
 export default userSlies.reducer
-// [fetchUsers.fulfilled.type]: (
-//   state,
-//   { payload }: PayloadAction<user[]>
-// ) => {
-//   state.IsLoading = false
-//   state.error = ''
-//   state.user = payload
-// },
-// [fetchUsers.pending.type]: (state) => {
-//   state.IsLoading = true
-// },
-// [fetchUsers.rejected.type]: (state, { payload }: PayloadAction<string>) => {
-//   state.IsLoading = false
-//   state.error = payload
-// },
