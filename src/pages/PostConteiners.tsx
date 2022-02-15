@@ -7,9 +7,9 @@ export const PostConteiners = () => {
   const { user } = useAppSelector((state) => state.user)
   return (
     <div className='element'>
-      {user.map((el) => (
+      {/* {user.map((el) => (
         <Postcont key={el.id} {...el} />
-      ))}
+      ))} */}
     </div>
   )
 }
